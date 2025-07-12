@@ -5,12 +5,15 @@ import vue from '@vitejs/plugin-vue'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  // This must match your repository name on GitHub.
+  // This is the crucial part for GitHub Pages deployment.
+  // It tells Vite where the project will be hosted.
   base: '/Date-Reminder-App/',
-  plugins: [vue()],
+  plugins: [
+    vue(),
+  ],
   resolve: {
     alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url)),
-    },
-  },
+      '@': fileURLToPath(new URL('./src', import.meta.url))
+    }
+  }
 })
